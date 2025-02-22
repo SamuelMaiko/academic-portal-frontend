@@ -105,7 +105,7 @@ const NavBar = () => {
         <Button
           onClick={() => navigate("/profile")}
           buttonType="roundedIconBtn"
-          className="dark:hover:bg-gray-600 size-[1.8rem] md:size-[2.1rem] ml-1 p-0 overflow-hidden bg-black dark:hover:text-white "
+          className=" size-[1.8rem] md:size-[2.1rem] ml-1 p-0 overflow-hidden dark:hover:text-white "
         >
           <img
             className="w-full h-full object-cover object-top"
