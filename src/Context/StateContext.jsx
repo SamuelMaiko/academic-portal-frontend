@@ -78,7 +78,7 @@ const StateContext = ({ children }) => {
     // if (!firstName || !lastName || !imageURL) {
     try {
       const response = await instance.get("/profile/");
-      // console.log(response.data);
+      console.log(response.data);
       setImageURL(response.data.profile_picture_absolute ?? Vini);
       setFirstName(response.data.first_name);
       setLastName(response.data.last_name);
