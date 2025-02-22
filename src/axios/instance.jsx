@@ -3,10 +3,10 @@ import { getCookie, createNewCookie, deleteCookie } from "../Cookies/Cookie";
 
 export const backend_url = "localhost:8000";
 const instance = axios.create({
-  baseURL: `http://${backend_url}/api`,
+  // baseURL: `http://${backend_url}/api`,
   // baseURL: "http://192.168.100.140:8000/api",
   // baseURL: "http://192.168.137.1:8000/api",
-  // baseURL: "https://techwavewriters.pythonanywhere.com/api/",
+  baseURL: "https://techwavewriters.pythonanywhere.com/api/",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",

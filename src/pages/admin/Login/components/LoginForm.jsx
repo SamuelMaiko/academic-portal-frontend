@@ -28,26 +28,16 @@ const LoginForm = () => {
           password: password,
         }
       );
+      console.log(response.data);
 
       createNewCookie("access_token", response.data.access);
       createNewCookie("refresh_token", response.data.refresh);
       createNewCookie("role", response.data.user.role);
 
-      // setting first name, last name and imageURL in LOCAL STORAGE
-      // console.log(response.data.user);
-      // localStorage.setItem("firstName", response.data.user.first_name);
-      // localStorage.setItem("lastName", response.data.user.last_name);
-      // localStorage.setItem(
-      //   "pfp",
-      //   response.data.user.profile_picture_absolute ?? Vini
-      // );
       localStorage.setItem(
         "darkMode",
         JSON.stringify(response.data.user.dark_mode)
       );
-      // setLastName(response.data.user.last_name);
-      // setImageURL(response.data.user.profile_picture_absolute ?? Vini);
-      // setDarkMode(response.data.user.dark_mode);
       toast.success("logged in successfully");
       setTimeout(() => {
         if (response.data.user.role == "Writer") {
@@ -85,8 +75,18 @@ const LoginForm = () => {
   return (
     <form
       onSubmit={handleUserLogin}
-      className="lg:w-[35rem] w-[90%] px-0 lg:px-0 pb-[2rem] bg-neutral-100 mt-[2rem]"
+      className="lg:w-[35rem] w-[90%] px-0 lg:px-0 pb-[2rem] bg-neutral-100 mt-[2rem] relative"
     >
+      <div className="flex justify-between">
+        <div>
+          <p>Writer:</p>
+          <p>Reg. no: TW5902 Pass: dalton</p>
+        </div>
+        <div>
+          <p>Admin:</p>
+          <p>Reg. no: TW7003 Pass: waiyaki</p>
+        </div>
+      </div>
       {/* <h1 className="text-center text-[29px] lg:text-[35px] ">Login</h1> */}
       <div className="flex h-[3rem] bg-gray-200 ">
         <button
