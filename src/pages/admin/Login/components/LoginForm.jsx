@@ -80,11 +80,11 @@ const LoginForm = () => {
       <div className="flex justify-between">
         <div>
           <p>Writer:</p>
-          <p>Reg. no: TW5902 Pass: dalton</p>
+          <p>Reg. no: TW37014 Pass: dalton</p>
         </div>
         <div>
           <p>Admin:</p>
-          <p>Reg. no: TW7003 Pass: waiyaki</p>
+          <p>Reg. no: TW76015 Pass: waiyaki</p>
         </div>
       </div>
       {/* <h1 className="text-center text-[29px] lg:text-[35px] ">Login</h1> */}
