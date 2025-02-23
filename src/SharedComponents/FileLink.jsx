@@ -43,7 +43,9 @@ const FileLink = ({ file_name = "", file, download_url }) => {
         <a
           href={download_url}
           download
-          className="hover:bg-gray-200 rounded-full p-2 cursor-pointer transition-colors duration-300 "
+          className={`hover:bg-gray-200 rounded-full p-2 cursor-pointer transition-colors duration-300 ${
+            download_url ? "" : "hidden"
+          }`}
         >
           {/* dark:hover:text-[#90ee90] hover:text-[#4caf50]*/}
           <Download

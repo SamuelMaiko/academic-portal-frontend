@@ -62,8 +62,12 @@ const SubmissionsDetail = () => {
           >
             {file && (
               <FileLink
-                file_name={file && file.file_name.split("/").at(-1)}
-                download_url={file.file_download_link}
+                file_name={
+                  file && file.file_name
+                    ? file.file_name.split("/").at(-1)
+                    : "No file available"
+                }
+                download_url={file && file.file_download_link}
               />
             )}
           </div>
