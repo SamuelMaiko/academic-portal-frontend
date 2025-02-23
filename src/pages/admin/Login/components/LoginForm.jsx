@@ -28,7 +28,7 @@ const LoginForm = () => {
           password: password,
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
 
       createNewCookie("access_token", response.data.access);
       createNewCookie("refresh_token", response.data.refresh);
@@ -66,7 +66,7 @@ const LoginForm = () => {
             break;
         }
       } else {
-        setError("An unexpected error occurred. Please try again later.");
+        toast.error("An unexpected error occurred. Please try again later.");
       }
     } finally {
       setIsLoading(false);
