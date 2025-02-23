@@ -3,14 +3,15 @@ import { getCookie, createNewCookie, deleteCookie } from "../Cookies/Cookie";
 
 export const backend_url = "academic-portal-backend.onrender.com";
 // export const backend_url = "localhost:8000";
+// baseURL: "https://academic-portal-backend.onrender.com/api/",
+// baseURL: "https://techwavewriters.pythonanywhere.com/api/",
+// Authorization: `Bearer ${getCookie("access_token")}`,
 const instance = axios.create({
-  // baseURL: "https://techwavewriters.pythonanywhere.com/api/",
-  // baseURL: "https://academic-portal-backend.onrender.com/api/",
   baseURL: `https://${backend_url}/api`,
   timeout: 30000,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${getCookie("access_token")}`,
   },
 });
 instance.interceptors.request.use(
