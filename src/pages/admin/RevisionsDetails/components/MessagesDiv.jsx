@@ -16,7 +16,7 @@ const MessagesDiv = ({
 
   useEffect(() => {
     socketRef.current = new WebSocket(
-      `ws://${backend_url}/ws/revision-messages/${id}/${firstName}/`
+      `wss://${backend_url}/ws/revision-messages/${id}/${firstName}/`
     );
     socketRef.current.onmessage = (event) => {
       const data = JSON.parse(event.data);
