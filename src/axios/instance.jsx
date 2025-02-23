@@ -1,8 +1,8 @@
 import axios from "axios";
 import { getCookie, createNewCookie, deleteCookie } from "../Cookies/Cookie";
 
-// export const backend_url = "academic-portal-backend.onrender.com";
-export const backend_url = "localhost:8000";
+export const backend_url = "academic-portal-backend.onrender.com";
+// export const backend_url = "localhost:8000";
 const instance = axios.create({
   // baseURL: "https://techwavewriters.pythonanywhere.com/api/",
   // baseURL: "https://academic-portal-backend.onrender.com/api/",
