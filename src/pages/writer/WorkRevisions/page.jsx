@@ -19,7 +19,7 @@ const WorkRevisions = () => {
 
   useEffect(() => {
     socketRef.current = new WebSocket(
-      `ws://${backend_url}/ws/revisions/${firstName}/${lastName}/`
+      `wss://${backend_url}/ws/revisions/${firstName}/${lastName}/`
     );
     socketRef.current.onmessage = (event) => {
       const data = JSON.parse(event.data);

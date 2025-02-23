@@ -61,7 +61,7 @@ const WorkFeed = () => {
 
   useEffect(() => {
     // Initialize WebSocket connection
-    socketRef.current = new WebSocket(`ws://${backend_url}/ws/work/`);
+    socketRef.current = new WebSocket(`wss://${backend_url}/ws/work/`);
 
     // Handle incoming messages
     socketRef.current.onmessage = (event) => {
