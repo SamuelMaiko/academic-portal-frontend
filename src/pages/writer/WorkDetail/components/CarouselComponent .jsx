@@ -25,7 +25,7 @@ const CarouselComponent = ({ images }) => {
       <CarouselControl>
         <div
           className={`absolute top-1/2 -translate-y-1/2 -left-[27%] ${
-            images.length === 1 ? "hidden" : ""
+            images && images.length === 1 ? "hidden" : ""
           }`}
         >
           <CarouselPrevButton className="" />
