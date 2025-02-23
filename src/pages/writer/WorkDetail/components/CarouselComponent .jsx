@@ -32,7 +32,7 @@ const CarouselComponent = ({ images }) => {
         </div>
         <div
           className={`absolute top-1/2 -translate-y-1/2 -right-[27%] ${
-            images.length === 1 ? "hidden" : ""
+            images && images.length === 1 ? "hidden" : ""
           }`}
         >
           <CarouselNextButton />
