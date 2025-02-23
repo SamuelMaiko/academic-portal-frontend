@@ -6,7 +6,7 @@ export const backend_url = "academic-portal-backend.onrender.com";
 const instance = axios.create({
   // baseURL: "https://techwavewriters.pythonanywhere.com/api/",
   // baseURL: "https://academic-portal-backend.onrender.com/api/",
-  baseURL: `http://${backend_url}/api`,
+  baseURL: `https://${backend_url}/api`,
   timeout: 30000,
   headers: {
     "Content-Type": "application/json",
