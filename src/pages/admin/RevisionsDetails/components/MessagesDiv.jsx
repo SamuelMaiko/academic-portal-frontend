@@ -9,6 +9,7 @@ const MessagesDiv = ({
   setRevisionMessages,
   setDeleting,
   markMessagesAsRead,
+  setImageToDisplay,
 }) => {
   const { firstName } = useStateShareContext();
   const { id } = useParams();
@@ -74,6 +75,7 @@ const MessagesDiv = ({
                 setRevisionMessages={setRevisionMessages}
                 setDeleting={setDeleting}
                 markMessagesAsRead={markMessagesAsRead}
+                setImageToDisplay={setImageToDisplay}
               />
             );
         })}

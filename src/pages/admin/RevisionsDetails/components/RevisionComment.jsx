@@ -7,6 +7,7 @@ import instance from "../../../../axios/instance";
 import { toast } from "react-toastify";
 import hourMinute from "./hourMinute";
 import relativeTime from "../../../../utils/RelativeTime";
+import { useStateShareContext } from "../../../../Context/StateContext";
 
 const RevisionComment = ({
   id,
@@ -24,11 +25,13 @@ const RevisionComment = ({
   setRevisionMessages,
   setDeleting,
   markMessagesAsRead,
+  setImageToDisplay,
 }) => {
   const [openDropDown, setOpenDropDown] = useState(false);
   const [showChevronDown, setShowChevronDown] = useState(false);
   const [loading, setLoading] = useState(false);
   const ref = useRef(null);
+  const { setShowCarouselModal } = useStateShareContext();
 
   const deleteMessage = async () => {
     setLoading(true);
@@ -125,6 +128,10 @@ const RevisionComment = ({
             } rounded-lg overflow-hidden shadow-[2px_2px_4px_rgba(0,0,0,0.2)] relative`}
           >
             <img
+              onClick={() => {
+                setShowCarouselModal(true);
+                setImageToDisplay([{ image: image }]);
+              }}
               className={`${!image ? "hidden" : ""} w-full h-[18rem]`}
               src={image}
               alt=""

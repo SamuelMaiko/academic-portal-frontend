@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ImageBlock from "./ImageBlock";
 import { ArrowLeft, CloudArrowDown } from "phosphor-react";
 import CarouselComponent from "./CarouselComponent ";
-import { X } from "lucide-react";
+import { TvMinimalPlay, X } from "lucide-react";
 import { useStateShareContext } from "../../../../Context/StateContext";
 
 const WorkImages = ({ images, zipUrl, zipName }) => {
@@ -27,6 +27,15 @@ const WorkImages = ({ images, zipUrl, zipName }) => {
             <span>Download all images</span>
           </button>
         </a>
+        <button
+          onClick={() => setShowCarouselModal(true)}
+          className={`text-sm flex items-center gap-2 hover:text-gray-500 
+            transition-colors duration-300 text-black py-1 md:px-4  font-medium 
+            ${images && images.length == 0 ? "hidden" : ""}
+            `}
+        >
+          <TvMinimalPlay size={20} />{" "}
+        </button>
       </div>
       <div className="grid grid-cols-3 md:grid-cols-8 gap-4 md:gap-6 md:px-2">
         {images &&
@@ -34,7 +43,7 @@ const WorkImages = ({ images, zipUrl, zipName }) => {
             return <ImageBlock key={index} {...image} />;
           })}
         <div
-          className={`text-[14px] lg:text-[16px] text-neutral-500 ${
+          className={`text-[14px] lg:text-[16px] text-neutral-500 whitespace-nowrap  ${
             images && images.length === 0 ? "" : "hidden"
           }`}
         >
@@ -66,9 +75,9 @@ const WorkImages = ({ images, zipUrl, zipName }) => {
           <button
             onClick={() => setShowCarouselModal(false)}
             className="rounded-full p-2 absolute
-             top-3 left-0 text-white block md:hidden"
+             top-3 right-3 text-white block md:hidden"
           >
-            <ArrowLeft size={24} />
+            <X size={24} />
           </button>
         </div>
       </div>

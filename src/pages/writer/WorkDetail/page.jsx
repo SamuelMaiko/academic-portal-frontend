@@ -38,7 +38,7 @@ const WorkDetail = () => {
     try {
       const response = await instance.get(`/work/${parseInt(id, 10)}/`);
       setWorkDetails(response.data);
-      // console.log(response.data);
+      console.log(response.data);
     } catch (error) {
       if (error.response && error.response.status) {
         const status = error.response.status;

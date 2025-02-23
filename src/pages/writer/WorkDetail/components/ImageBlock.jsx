@@ -3,7 +3,7 @@ import { Download } from "lucide-react";
 import { useStateShareContext } from "../../../../Context/StateContext";
 
 const ImageBlock = ({ image, image_name, download_url, combined }) => {
-  const { setShowCarouselModal } = useStateShareContext();
+  // const { setShowCarouselModal } = useStateShareContext();
 
   // JUST to prevent propagation nothing else
   const handleDownload = (e) => {
@@ -12,7 +12,7 @@ const ImageBlock = ({ image, image_name, download_url, combined }) => {
 
   return (
     <div
-      onClick={() => setShowCarouselModal(true)}
+      // onClick={() => setShowCarouselModal(true)}
       className="relative size-[6rem] cursor-pointer hover:bg-gray-400 overflow-hidden"
     >
       <img className="h-full w-full " src={image} alt={image_name} />

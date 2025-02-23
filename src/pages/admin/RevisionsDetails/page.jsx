@@ -9,6 +9,8 @@ import { useAdminContext } from "../../../Context/AdminContext";
 import NoMessagesIcon from "./components/NoMessagesIcon";
 import instance from "../../../axios/instance";
 import MessagesDiv from "./components/MessagesDiv";
+import CarouselComponent from "../../writer/WorkDetail/components/CarouselComponent ";
+import { useStateShareContext } from "../../../Context/StateContext";
 
 const RevisionsDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -22,6 +24,8 @@ const RevisionsDetails = () => {
   const { id } = useParams();
   const { setWorkBeingRevised, setShowNavBar } = useAdminContext();
   const [unReadMessages, setUnReadMessages] = useState(0);
+  const { showCarouselModal, setShowCarouselModal } = useStateShareContext();
+  const [imageToDisplay, setImageToDisplay] = useState([]);
 
   const markMessagesAsRead = async () => {
     try {
@@ -97,10 +101,15 @@ const RevisionsDetails = () => {
   return (
     // <CarouselComponent images={[logo]} />
     <div
-      className="w-full h-[calc(100vh-6rem)]  px-4 md:px-[2rem]
+      className="relative w-full h-[calc(100vh-6rem)]  px-4 md:px-[2rem]
        flex flex-col justify-between bg-purple-50
      dark:bg-darkMode-bars dark:text-black md:gap-0 overflow-hidden"
     >
+      <div
+        className={`absolute inset-0 bg-[rgba(0,0,0,0.8)] z-10 ${
+          showCarouselModal ? "" : "hidden"
+        }`}
+      ></div>
       <div className="relative h-[88%] overflow-hidden">
         <div
           className={` remove-scrollbar h-full w-full pt-2 ${
@@ -121,6 +130,7 @@ const RevisionsDetails = () => {
             setRevisionMessages={setRevisionMessages}
             setDeleting={setDeleting}
             markMessagesAsRead={markMessagesAsRead}
+            setImageToDisplay={setImageToDisplay}
           />
           <div
             ref={unReadMessagesRef}
@@ -242,6 +252,33 @@ const RevisionsDetails = () => {
           setDeleting={setDeleting}
           markMessagesAsRead={markMessagesAsRead}
         />
+      </div>
+
+      <div
+        className={`absolute z-20 w-[100vw] md:w-[60%] lg:h-[100%] h-[110%] left-[50%] bg-white
+     translate-x-[-50%] top-[50%] translate-y-[-50%] dark:bg-darkMode-body
+      dark:text-darkMode-text bg-transparent flex items-center ${
+        showCarouselModal ? "" : "hidden"
+      }
+        `}
+      >
+        <CarouselComponent images={imageToDisplay} />
+        {/* cancel button */}
+        <button
+          onClick={() => setShowCarouselModal(false)}
+          className="rounded-full p-2 absolute z-20
+             top-3 -right-[30%] text-white hidden md:block"
+        >
+          <X size={28} />
+        </button>
+        {/* back button for mobile */}
+        <button
+          onClick={() => setShowCarouselModal(false)}
+          className="rounded-full p-2 absolute z-20
+             top-[4rem] right-3 text-black block md:hidden"
+        >
+          <X size={24} />
+        </button>
       </div>
     </div>
   );

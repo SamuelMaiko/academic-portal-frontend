@@ -17,8 +17,14 @@ const WorkFeed = () => {
   const { work, setWork } = useProgressBarContext();
   const [loading, setLoading] = useState(true);
   const { setShowNavBar } = useAdminContext();
-  const { filters, darkMode, firstName, lastName, getDetails } =
-    useStateShareContext();
+  const {
+    filters,
+    darkMode,
+    firstName,
+    lastName,
+    getDetails,
+    setShowCarouselModal,
+  } = useStateShareContext();
 
   useEffect(() => {
     getWork();
@@ -54,6 +60,7 @@ const WorkFeed = () => {
 
   useEffect(() => {
     setShowNavBar(true);
+    setShowCarouselModal(false);
   }, []);
 
   const [showBanner, setShowBanner] = useState(false);

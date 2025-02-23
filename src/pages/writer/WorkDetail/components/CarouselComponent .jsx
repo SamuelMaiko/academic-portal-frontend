@@ -23,13 +23,21 @@ const CarouselComponent = ({ images }) => {
           ))}
       </CarouselSlides>
       <CarouselControl>
-        <div className="absolute top-1/2 -translate-y-1/2 -left-[27%]">
+        <div
+          className={`absolute top-1/2 -translate-y-1/2 -left-[27%] ${
+            images.length === 1 ? "hidden" : ""
+          }`}
+        >
           <CarouselPrevButton className="" />
         </div>
-        <div className="absolute top-1/2 -translate-y-1/2 -right-[27%]">
+        <div
+          className={`absolute top-1/2 -translate-y-1/2 -right-[27%] ${
+            images.length === 1 ? "hidden" : ""
+          }`}
+        >
           <CarouselNextButton />
         </div>
-        <CarouselIndicators className="absolute left-1/2 -translate-x-1/2 z-50 bottom-[5%]" />
+        {/* <CarouselIndicators className="absolute left-1/2 -translate-x-1/2 z-50 bottom-[5%]" /> */}
       </CarouselControl>
     </Carousel>
   );
