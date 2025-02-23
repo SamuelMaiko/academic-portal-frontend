@@ -110,7 +110,7 @@ const SubmitMessage = ({
     <div
       className={`absolute lg:static ${
         revisionMessages.length > 0 ? "bottom-[2%]" : "bottom-[6%]"
-      } flex justify-between items-center gap-2 lg:gap-4 lg:items-end h-full w-full pb-2 `}
+      } flex justify-between items-center gap-2 lg:gap-4 lg:items-end h-full w-full pb-2 px-3`}
     >
       <div
         className={`${
@@ -166,6 +166,7 @@ const SubmitMessage = ({
           className="w-full p-2 lg:p-3 border border-gray-300 rounded-md focus:outline-none text-[14px] lg:text-[15px]
            focus:ring-2 resize-none"
           minRows={1}
+          maxRows={3}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}

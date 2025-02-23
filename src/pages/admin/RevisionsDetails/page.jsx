@@ -97,7 +97,7 @@ const RevisionsDetails = () => {
   return (
     // <CarouselComponent images={[logo]} />
     <div
-      className="w-full h-[calc(100vh-6rem)] relative px-4 md:px-[2rem]
+      className="w-full h-[calc(100vh-6rem)]  px-4 md:px-[2rem]
        flex flex-col justify-between bg-purple-50
      dark:bg-darkMode-bars dark:text-black md:gap-0 overflow-hidden"
     >
@@ -230,7 +230,7 @@ const RevisionsDetails = () => {
         </div>
       </div>
       {/* <div className=" relative w-full h-[20%]"> */}
-      <div className=" fixed w-full h-[20%] -bottom-[1.5rem] left-1/2 -translate-x-1/2">
+      <div className=" fixed lg:relative w-full h-[16%] lg:h-[20%] -bottom-[1.5rem] lg:bottom-7 left-1/2 -translate-x-1/2 bg-white lg:bg-transparent">
         <SubmitMessage
           file={file}
           setFile={setFile}
