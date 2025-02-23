@@ -103,7 +103,7 @@ const RevisionsDetails = () => {
     >
       <div className="relative h-[88%] overflow-hidden">
         <div
-          className={` scrollble h-full w-full pt-2 ${
+          className={` remove-scrollbar h-full w-full pt-2 ${
             file === null && image === null
               ? "overflow-y-scroll"
               : "overflow-hidden"
@@ -229,7 +229,8 @@ const RevisionsDetails = () => {
           </div>
         </div>
       </div>
-      <div className=" relative w-full h-[20%]">
+      {/* <div className=" relative w-full h-[20%]"> */}
+      <div className=" fixed w-full h-[20%] -bottom-[1.5rem] left-1/2 -translate-x-1/2">
         <SubmitMessage
           file={file}
           setFile={setFile}

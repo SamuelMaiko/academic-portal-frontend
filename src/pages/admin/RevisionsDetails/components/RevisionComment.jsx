@@ -87,7 +87,7 @@ const RevisionComment = ({
       onClick={() => {
         markMessagesAsRead().then((data) => {});
       }}
-      className={`flex ${is_mine ? "justify-end" : "justify-start"} `}
+      className={`flex ${is_mine ? "justify-end mr-1" : "justify-start"} `}
     >
       {" "}
       {/* container of the single message - WIDTH fits the WHOLE PAGE  */}
@@ -97,9 +97,9 @@ const RevisionComment = ({
           setOpenDropDown(false);
           setShowChevronDown(false);
         }}
-        className=" relative"
+        className=" relative "
       >
-        <div className="mb-8">
+        <div className="mb-8 w-[65vw] lg:w-full">
           <p
             className={`text-[13px] ${
               is_mine ? "text-right" : ""
@@ -118,7 +118,7 @@ const RevisionComment = ({
             onClick={() => {}}
             onMouseEnter={() => setShowChevronDown(true)}
             // onMouseLeave={() => setShowChevronDown(false)}
-            className={`w-[20rem] ${
+            className={`lg:w-[20rem] w-[100%] ${
               is_mine
                 ? "bg-[#FFECB3] dark:bg-[#B39DDB] text-[#333333] dark:text-[#FFFFFF]"
                 : "bg-[#E8F5E9] dark:bg-[#3F3F3F] text-[#212121] dark:text-[#E0E0E0]"

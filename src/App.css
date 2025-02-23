@@ -319,3 +319,12 @@
 .entry-point-remove-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+.remove-scrollbar {
+  overflow: auto;
+  scrollbar-width: none; /* For Firefox */
+}
+
+.remove-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
